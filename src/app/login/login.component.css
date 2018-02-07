@@ -1,0 +1,55 @@
+.login{
+  overflow: hidden;
+}
+.logo{
+  width: 200px;
+  margin: 0 auto;
+  margin-top: 50px;
+}
+.logo img{
+  width: 100%;
+}
+.login-content{
+  width: 40%;
+  margin: 0 auto;
+  border: 1px solid #e2e2e2;
+  border-radius:5px ;
+  padding-bottom: 2%;
+}
+.login-content input{
+  display: block;
+  height: 40px;
+  width: 80%;
+  margin: 2% auto;
+  line-height: 40px;
+  border: none;
+  border-bottom:1px solid #e2e2e2;
+  padding: 6px 12px;
+  outline:none;
+  -webkit-appearance: none;
+  border-radius: 0;
+}
+.forgetPassword,.register{
+  font-size: 12px;
+  text-align: right;
+  padding-right: 10%;
+}
+.submit{
+  font-size: 20px;
+  text-align: center;
+  width: 40%;
+  height: 40px;
+  line-height: 40px;
+  color: #fff;
+  border-radius: 5px;
+  margin: 0 auto;
+  background-color: green;
+  cursor: pointer;
+}
+.submit:hover{
+  opacity: .8;
+  transition: all .5s linear;
+}
+.forgetPassword a:hover,.register a:hover{
+  color: red;
+}
