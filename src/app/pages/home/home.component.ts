@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
+import {Cookie} from 'angular2-cookies';
 
 @Component({
   selector: 'app-home',
@@ -9,7 +10,8 @@ import {ActivatedRoute} from '@angular/router';
 export class HomeComponent implements OnInit {
 
   constructor(
-    private activatedRoute: ActivatedRoute,   //这里需要注入ActivatedRoute模块
+    public activatedRoute: ActivatedRoute,   //这里需要注入ActivatedRoute模块
+    public router: Router
   ) {
     activatedRoute.queryParams.subscribe(queryParams => {
       let productId = queryParams.productId;
@@ -19,6 +21,9 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit() {
+    if(!Cookie.load('userName')){
+      this.router.navigate(['login']);
+    }
     console.log(1);
   }
 

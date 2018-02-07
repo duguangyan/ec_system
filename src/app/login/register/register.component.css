@@ -45,6 +45,7 @@
   margin: 0 auto;
   background-color: green;
   cursor: pointer;
+  margin-top: 30px;
 }
 .submit:hover{
   opacity: .8;

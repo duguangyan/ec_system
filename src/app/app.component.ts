@@ -15,10 +15,10 @@ export class AppComponent implements OnInit{
   ) { }
   ngOnInit() {
 
-    this.username = Cookie.load("username");
+    /*this.username = Cookie.load("username");
     if(this.username == null){
       this.router.navigate(['login']);
-    }
+    }*/
 
   }
 }

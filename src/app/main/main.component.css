@@ -63,6 +63,11 @@
   box-shadow: 0px 1px 1px #e2e2e2;
   z-index: 9999;
   transition: all .3s linear;
+  width: 180px;
+  overflow: hidden;
+}
+.login a:nth-child(2) h5{
+  font-size: 16px;
 }
 .login-ul{
   height: 0;
@@ -80,6 +85,11 @@
 .login-ul ul li:hover{
   background-color: #e2e2e2;
 }
+
+.login-ul ul li a{
+  text-align: left;
+  padding-left: 100px;
+}
 .sidebar{
   width: 200px;
   height: 100%;
@@ -94,9 +104,9 @@
   margin-left: 200px;
 }
 
-.sidebar a{
-  text-align: center;
-
+.sidebar h5{
+  text-align: left;
+  padding-left: 30px;
 }
 
 .sidebar div ul li a ,.sidebar h5 {
@@ -114,15 +124,21 @@
 .sidebar h5:hover{
   background-color: #28b5d6;
 }
+.h5active h5{
+  background-color: #28b5d6;
+}
+.liactive a{
+  color: #28b5d6 !important;
+}
 .sidebar ul{
   transition: all .5s linear;
 }
+.sidebar ul li:hover{
+  background-color: #4a5064;
+}
 .sidebar ul li a{
   line-height: 40px;
-}
-.sidebar ul li a:hover{
-  background-color: #28b5d6;
-  padding-left: 20px;
+  padding-left: 50px;
 }
 .sidebar div a img{
   position: absolute;

@@ -4,12 +4,12 @@
     <div class="login cl">
       <a href="">nav1</a>
       <a href="javascript:void(0);">
-        {{username || "姓名"}}
+        <h5><span *ngIf="userName">欢迎您,</span>{{userName || "请登录"}}</h5>
         <div class="login-ul">
           <ul>
             <li>我的资料</li>
             <li>我消息</li>
-            <li>退出</li>
+            <li (click)="logout()">退出</li>
           </ul>
         </div>
       </a>
@@ -18,11 +18,11 @@
   <div class="content cl">
     <div class="sidebar">
       <div *ngFor="let list of sidebarLists;let i = index">
-        <a routerLink="{{list.url}}">
-          <h5 (click)="todoShow(i)">{{list.h5}}</h5><img [ngClass]="{'iconActive':i===isUlShow}" src="../../assets/imgs/arrows_right.png" alt="箭头">
+        <a routerLink="{{list.url}}"  (click)="todoShow(i)" [ngClass]="{'h5active':i === isUlShow}">
+          <h5>{{list.h5}}</h5><img [ngClass]="{'iconActive':i===isUlShow}" src="../../assets/imgs/arrows_right.png" alt="箭头">
           <div>
             <ul *ngIf="i === isUlShow">
-              <li *ngFor="let o of list.lists">
+              <li *ngFor="let o of list.lists;let i = index" (click)="todoLiShow($event,i)" [ngClass]="{'liactive':i === isLiShow}">
                 <a routerLink="{{o.url}}">{{o.txt}}</a>
               </li>
             </ul>

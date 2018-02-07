@@ -11,6 +11,7 @@ import {Cookie} from 'angular2-cookies';
 
 
 export class LoginComponent implements OnInit {
+  public userName: string = '';
 
   constructor(public router:Router) { }
 
@@ -19,8 +20,11 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
-    Cookie.save('username','duguangyan');
-    this.router.navigate(['']);
+    Cookie.save('userName',this.userName);
+    if(this.userName !== ''){
+      this.router.navigate(['']);
+    }
+
   }
 
 }
