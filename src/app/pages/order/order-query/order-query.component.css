@@ -1,0 +1,154 @@
+.query-title{
+  height: 30px;
+  line-height: 30px;
+  border: 1px solid #eeeeee;
+  padding-left: 10px;
+  font-size: 12px;
+  color: #333;
+}
+.query-title span{
+  color: #666;
+}
+.search-input ul li,.query-select ul li{
+  float: left;
+  padding: 4px 8px;
+}
+.search-input,.query-select {
+  padding: 5px;
+}
+
+.search-input span,.query-select span{
+  padding-right: 10px;
+}
+
+.query-select ul li:nth-child(1) input{
+  width: 140px;
+  display: inline-block !important;
+  height: 24px;
+  border: 1px solid #999;
+}
+.query-select ul li select{
+  height: 24px;
+  border: 1px solid #999;
+}
+
+.query-select ul li i{
+  position: absolute;
+  left: 156px;
+  top: 6px;
+}
+.search-input ul li input,.query-select ul li input{
+  width: 160px;
+}
+.query-select ul li i{
+  position: absolute;
+  left: 192px;
+  top: 6px;
+  z-index: -1;
+}
+.query-select ul li{
+  position: relative;
+}
+.orderData{
+  left: 356px!important;
+}
+.order-search{
+  margin-left: 20px;
+}
+.order-query-content table{
+  width: 100%;
+}
+.order-query-content table tr{
+  height: 30px;
+  line-height: 30px;
+}
+.order-query-content table thead tr th{
+  background-color: #eee;
+  text-align: center;
+}
+.order-query-content table thead tr th:nth-child(1){
+  width: 100px;
+}
+.order-query-content{
+  margin-top: 20px;
+}
+.warp-title{
+  background-color: #999;
+  color: #fff;
+  margin-top: 20px;
+}
+.warp-title ul li{
+  line-height: 30px;
+}
+.order-warp ul li{
+  float: left;
+  padding: 0 5px;
+  text-align: center;
+  font-size: 12px;
+  text-align: center;
+  line-height: 30px;
+}
+
+.warp-content ul{
+  line-height: 80px;
+  background-color: #e2e2e2;
+}
+.warp-content ul li{
+  line-height: 15px;
+  padding: 5px;
+}
+.order-warp ul li:nth-child(1){
+  width: 5%;
+}
+.order-warp ul li:nth-child(2){
+  width: 20%;
+}
+.order-warp ul li:nth-child(3){
+  width: 15%;
+}
+.order-warp ul li:nth-child(4){
+  width: 10%;
+}
+.order-warp ul li:nth-child(5){
+  width: 30%;
+  text-align: left;
+}
+.order-warp ul li:nth-child(6){
+  width: 8%;
+}
+.order-warp ul li:nth-child(7){
+  width: 5%;
+}
+.warp-content ol{
+  border: 1px solid #e2e2e2;
+}
+.warp-content ol li{
+  float: left;
+  text-align: center;
+  font-size: 12px;
+  padding: 5px;
+}
+.warp-content ol li:nth-child(1){
+  width: 5%;
+}
+.warp-content ol li:nth-child(2){
+  width: 20%;
+}
+.warp-content ol li:nth-child(3){
+  width: 15%;
+}
+.warp-content ol li:nth-child(4){
+  width: 10%;
+}
+.warp-content ol li:nth-child(5){
+  width: 30%;
+  text-align: left;
+}
+.warp-content ol li:nth-child(6){
+  width: 8%;
+
+}
+.warp-content ol li:nth-child(7){
+  width: 5%;
+  cursor: pointer;
+}

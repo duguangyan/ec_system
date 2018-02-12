@@ -1,0 +1,69 @@
+<div class="appOrderLists">
+  <div class="layui-row listsTitle1">
+    <div class="layui-col-xs3">
+      <span>订单编号:</span><input type="text" placeholder="编号查询" class="layui-input">
+    </div>
+    <div class="layui-col-xs3">
+      <span>货源类型:</span><input type="text" placeholder="货源查询" class="layui-input">
+    </div>
+    <div class="layui-col-xs3">
+      <span>物料类型:</span><input type="text" placeholder="物料查询" class="layui-input">
+    </div>
+    <div class="layui-col-xs3">
+      <span>描述:</span><input type="text" placeholder="描述查询" class="layui-input">
+    </div>
+  </div>
+  <div class="layui-row listsTitle2">
+    <div class="layui-col-xs6">
+      <div class="layui-inline">
+        <span style="margin-right: 16px">下单时间:</span>
+        <div class="layui-input-inline">
+          <input type="text" class="layui-input" id="orderStartTime" placeholder="开始时间">
+        </div>
+        —
+        <div class="layui-input-inline">
+          <input type="text" class="layui-input" id="orderEndTime" placeholder="结束时间">
+        </div>
+      </div>
+    </div>
+    <div class="layui-col-xs6">
+      <button class="layui-btn layui-btn-normal" (click)="orderSearch()">查询</button>
+    </div>
+  </div>
+
+  <div class="layui-row">
+    <fieldset class="layui-elem-field layui-field-title" style="margin-top: 50px;">
+      <legend>订单列表</legend>
+    </fieldset>
+
+    <table class="layui-table">
+      <colgroup>
+        <col width="40%" >
+        <col width="40%">
+        <col width="20%">
+        <col>
+      </colgroup>
+      <thead>
+      <tr>
+        <th>备注</th>
+        <th>状态</th>
+        <th>操作</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let list of lists">
+        <td>{{list.field_desc}}</td>
+        <td>{{list.field_desc}}</td>
+        <td> <button class="layui-btn" (click)="goDetail(list.id)">详情</button></td>
+      </tr>
+      </tbody>
+    </table>
+
+    <div id="demo7"></div>
+    <div>{{ceshi}}</div>
+  </div>
+
+
+</div>
+
+

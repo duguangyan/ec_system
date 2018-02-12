@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
 import {Cookie} from 'angular2-cookies';
-
+declare var layui:any;
 @Component({
   selector: 'app-main',
   templateUrl: './main.component.html',
@@ -15,12 +15,11 @@ export class MainComponent implements OnInit {
   constructor(public router:Router) {
     this.sidebarLists = [
       {
-        url:'/home',
-        h5:'一级菜单',
+        url:'/appOrderLists',
+        h5:'小鹿快找',
         lists:[
-          {url:'',txt:'菜单一'},
-          {url:'',txt:'菜单二'},
-          {url:'',txt:'菜单三'}
+          {url:'/appOrderLists',txt:'订单列表'},
+          {url:'/appOrderDetail',txt:'订单详情'}
         ]
       },
       {
@@ -64,12 +63,12 @@ export class MainComponent implements OnInit {
         ]
       },
       {
-        url:'/settings',
+        url:'/order',
         h5:'订单查询',
         lists:[
-          {url:'',txt:'平台订单查询'},
-          {url:'',txt:'平台订单处理'},
-          {url:'',txt:'平台订单详情'}
+          {url:'/orderQuery',txt:'平台订单查询'},
+          {url:'/orderProcess',txt:'平台订单处理'},
+          {url:'/orderDetail',txt:'平台订单详情'}
         ]
       },
       {
@@ -101,13 +100,14 @@ export class MainComponent implements OnInit {
           {url:'',txt:'新增资讯公告'}
         ]
       },
+      /*
       {
         url:'/settings',
         h5:'付费订阅管理',
         lists:[
           {url:'',txt:'付费订阅订单查询'}
         ]
-      },
+      },*/
       {
         url:'/settings',
         h5:'结算管理',
@@ -157,12 +157,14 @@ export class MainComponent implements OnInit {
 
   ngOnInit() {
     this.userName = Cookie.load('userName');
-    this.router.navigate(['home'],{
-      queryParams: {
-        productId: '1',
-        title: 'moon'
-      }
-    });
+    if(this.userName){
+      this.router.navigate(['appOrderLists']);
+    }else{
+      this.router.navigate(['login']);
+    }
+
+
+
   }
   todoShow(index) {
     this.isUlShow = index;

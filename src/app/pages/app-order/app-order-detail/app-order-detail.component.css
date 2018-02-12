@@ -1,0 +1,27 @@
+.layui-elem-field{
+  margin-top: 20px !important;
+}
+.detailTitle{
+  margin-left: 14px;
+  color: #009688;
+}
+.detailPrice tr td:first-child{
+  text-align: right;
+}
+.detailPrice tr td{
+  border: none;
+}
+.detailPrice{
+  border-bottom:1px solid #e2e2e2;
+  margin-top: 10px;
+}
+.detailConsignee tr td{
+  border: none;
+}
+.detailConsignee{
+  border-top: 1px solid #e2e2e2;
+  border-bottom: 1px solid #e2e2e2;
+}
+a{
+  color: red;
+}

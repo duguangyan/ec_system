@@ -1,20 +1,55 @@
 .login{
+  min-width: 1200px;
   overflow: hidden;
+}
+.
+.login h5{
+  font-size: 24px;
+  margin-top: 10px;
 }
 .logo{
   width: 200px;
   margin: 0 auto;
-  margin-top: 50px;
+
+  position: relative;
+  z-index: 9;
 }
 .logo img{
   width: 100%;
 }
 .login-content{
-  width: 40%;
+  width: 600px;
   margin: 0 auto;
   border: 1px solid #e2e2e2;
   border-radius:5px ;
   padding-bottom: 2%;
+  position: relative;
+  z-index: 9;
+  margin-top: 50px;
+}
+.login-content h5{
+  font-size: 24px;
+}
+.login-content-bg{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+  opacity: .5;
+}
+.login>img{
+  position: absolute;
+  top: 0;
+  left: 0;
+  max-width: 1920px;
+  width: 100%;
+  min-width: 1200px;
+}
+.login-content-from{
+  position: relative;
+  z-index: 999;
 }
 .login-content input{
   display: block;
@@ -28,6 +63,7 @@
   outline:none;
   -webkit-appearance: none;
   border-radius: 0;
+  background: transparent;
 }
 .forgetPassword,.register{
   font-size: 12px;
@@ -55,4 +91,7 @@
 }
 .login-content h5{
   text-align: center;
+}
+.modal-content{
+  padding: 20px;
 }

@@ -1,0 +1,172 @@
+<div class="order-query">
+  <div class="query-title">
+    <i class="layui-icon">&#xe68e;</i>   订单查询 > <span>平台订单查询</span>
+  </div>
+  <div class="query-search">
+    <div class="search-input">
+      <ul class="cl">
+        <li><span>订单编号:</span><input type="text"></li>
+        <li><span>商户名称:</span><input type="text"></li>
+        <li><span>商品ID:</span><input type="text"></li>
+        <li><span>商品名称:</span><input type="text"></li>
+        <li><span>客户名称:</span><input type="text"></li>
+      </ul>
+    </div>
+    <div class="query-select">
+      <ul class="cl">
+        <li><span>下单时间:</span><input type="text" placeholder="请输入开始时间" class="layui-input" id="orderQueryStart" /> — <input type="text" placeholder="请输入结束时间" class="layui-input" id="orderQueryEnd" /> </li>
+        <li>
+          <span>订单状态:</span>
+          <select name="" id="">
+            <option value="1">所有</option>
+            <option value="1">等待卖家确认</option>
+            <option value="1">等待买家确认</option>
+            <option value="1">等待买家付款</option>
+            <option value="1">等待卖家发货</option>
+            <option value="1">卖家已发货</option>
+            <option value="1">买家已确认收货</option>
+            <option value="1">退款处理中</option>
+            <option value="1">交易完成</option>
+            <option value="1">交易取消</option>
+          </select>
+        </li>
+        <li>
+          <span>支付状态:</span>
+          <select name="" id=" ">
+            <option value="1">所有</option>
+            <option value="1">未支付</option>
+            <option value="1">已支付</option>
+          </select>
+        </li>
+        <span class="order-search layui-btn layui-btn-sm">查询</span>
+        <span class="order-getout layui-btn layui-btn-sm">批量导出</span>
+      </ul>
+    </div>
+  </div>
+
+  <div class="order-warp">
+    <div class="warp-title">
+      <ul class="cl">
+        <li><input class="check-box checkAll" name="selectall" type="checkbox"><span>全选</span></li>
+        <li (click)="getCheckBoxVals()">订单详情</li>
+        <li>单价</li>
+        <li>总金额</li>
+        <li>收货信息</li>
+        <li>状态</li>
+        <li>操作</li>
+      </ul>
+    </div>
+    <div class="warp-content">
+      <ul class="cl">
+        <li><input class="check-box stuCheckBox" value = '1'   name="stuCheckBox" type="checkbox"></li>
+        <li>订单编号：86523975496749</li>
+        <li>下单时间：2011/10/10 14:00</li>
+        <li>供应商：温州市***皮业有限公司</li>
+        <li>采购商：广州***鞋业有限公司</li>
+        <li>订单状态：已拆分</li>
+        <li></li>
+      </ul>
+      <ol class="cl">
+        <li></li>
+        <li>
+          <p>进口头层黄牛皮荔枝纹</p>
+        </li>
+        <li>
+          <p>数量：20平方英尺</p>
+          <p>单价：￥20.00</p>
+        </li>
+        <li>
+          <p>￥400.00</p>
+          <p>含运费：免运费</p>
+          <p>平台担保</p>
+        </li>
+        <li>
+          <p>收货人：王宇</p>
+          <p>收货地址:广东省广州市海珠区新港东路1068号中洲中心北塔6楼</p>
+          <p>联系电话：18608080088</p>
+        </li>
+        <li>
+          <p>等待卖家发货</p>
+        </li>
+        <li (click)="goDetail()">
+          <p class="layui-btn layui-btn-sm">订单详情</p>
+        </li>
+      </ol>
+    </div>
+    <div class="warp-content">
+      <ul class="cl">
+        <li><input class="check-box stuCheckBox" value = '2' name="stuCheckBox" type="checkbox"></li>
+        <li>订单编号：86523975496749</li>
+        <li>下单时间：2011/10/10 14:00</li>
+        <li>供应商：温州市***皮业有限公司</li>
+        <li>采购商：广州***鞋业有限公司</li>
+        <li>订单状态：已拆分</li>
+        <li></li>
+      </ul>
+      <ol class="cl">
+        <li></li>
+        <li>
+          <p>进口头层黄牛皮荔枝纹</p>
+        </li>
+        <li>
+          <p>数量：20平方英尺</p>
+          <p>单价：￥20.00</p>
+        </li>
+        <li>
+          <p>￥400.00</p>
+          <p>含运费：免运费</p>
+          <p>平台担保</p>
+        </li>
+        <li>
+          <p>收货人：王宇</p>
+          <p>收货地址:广东省广州市海珠区新港东路1068号中洲中心北塔6楼</p>
+          <p>联系电话：18608080088</p>
+        </li>
+        <li>
+          <p>等待卖家发货</p>
+        </li>
+        <li (click)="goDetail()">
+          <p class="layui-btn layui-btn-sm">订单详情</p>
+        </li>
+      </ol>
+    </div>
+    <div class="warp-content">
+      <ul class="cl">
+        <li><input class="check-box stuCheckBox" value = '3' name="stuCheckBox" type="checkbox"></li>
+        <li>订单编号：86523975496749</li>
+        <li>下单时间：2011/10/10 14:00</li>
+        <li>供应商：温州市***皮业有限公司</li>
+        <li>采购商：广州***鞋业有限公司</li>
+        <li>订单状态：已拆分</li>
+        <li></li>
+      </ul>
+      <ol class="cl">
+        <li></li>
+        <li>
+          <p>进口头层黄牛皮荔枝纹</p>
+        </li>
+        <li>
+          <p>数量：20平方英尺</p>
+          <p>单价：￥20.00</p>
+        </li>
+        <li>
+          <p>￥400.00</p>
+          <p>含运费：免运费</p>
+          <p>平台担保</p>
+        </li>
+        <li>
+          <p>收货人：王宇</p>
+          <p>收货地址:广东省广州市海珠区新港东路1068号中洲中心北塔6楼</p>
+          <p>联系电话：18608080088</p>
+        </li>
+        <li>
+          <p>等待卖家发货</p>
+        </li>
+        <li (click)="goDetail()">
+          <p class="layui-btn layui-btn-sm">订单详情</p>
+        </li>
+      </ol>
+    </div>
+  </div>
+
+</div>
