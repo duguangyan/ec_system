@@ -142,16 +142,10 @@
 .h5active h5{
   background-color: #28b5d6;
 }
-.h5active>div{
-  height: auto !important;
-  transition: all .5s linear;
-}
 .liactive a{
   color: #28b5d6 !important;
 }
-.sidebar a>div{
-  height: 0;
-  overflow: hidden;
+.sidebar ul{
   transition: all .5s linear;
 }
 .sidebar ul li:hover{

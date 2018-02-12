@@ -2,10 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
 import {Cookie} from 'angular2-cookies';
 declare var layui:any;
+declare var $:any;
 @Component({
   selector: 'app-main',
   templateUrl: './main.component.html',
   styleUrls: ['./main.component.css']
+
 })
 export class MainComponent implements OnInit {
   public sidebarLists: any[];

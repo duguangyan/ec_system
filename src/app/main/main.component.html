@@ -21,7 +21,7 @@
         <a routerLink="{{list.url}}"  (click)="todoShow(i)" [ngClass]="{'h5active':i === isUlShow}">
           <h5>{{list.h5}}</h5><img [ngClass]="{'iconActive':i===isUlShow}" src="../../assets/imgs/arrows_right.png" alt="箭头">
           <div>
-            <ul>
+            <ul *ngIf="i === isUlShow">
               <li *ngFor="let o of list.lists;let i = index" (click)="todoLiShow($event,i)" [ngClass]="{'liactive':i === isLiShow}">
                 <a routerLink="{{o.url}}">{{o.txt}}</a>
               </li>
