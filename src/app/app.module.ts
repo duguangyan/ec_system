@@ -21,7 +21,7 @@ import { AppOrderListsComponent } from './pages/app-order/app-order-lists/app-or
 import { AppOrderDetailComponent } from './pages/app-order/app-order-detail/app-order-detail.component';
 import {AppOrderComponent} from './pages/app-order/app-order.component';
 import {HttpService} from './sevice/http.service';
-
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,6 +43,7 @@ import {HttpService} from './sevice/http.service';
   imports: [
     FormsModule,
     HttpClientModule,
+    BrowserAnimationsModule,
     BrowserModule,
     RouterModule.forRoot(ROUTES)
   ],

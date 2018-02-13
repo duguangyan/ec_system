@@ -1,12 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
 import {Cookie} from 'angular2-cookies';
+import {appAnimate} from '../animate/animate';
+
 declare var layui:any;
 declare var $:any;
 @Component({
   selector: 'app-main',
   templateUrl: './main.component.html',
-  styleUrls: ['./main.component.css']
+  styleUrls: ['./main.component.css'],
+  animations: [
+    appAnimate
+  ]
 
 })
 export class MainComponent implements OnInit {
@@ -14,6 +19,8 @@ export class MainComponent implements OnInit {
   public isUlShow :any = 0;
   public userName: string;
   public isLiShow: any = 0;
+  private boxState: String = 'left';
+  private _isTrue: Boolean = true;
   constructor(public router:Router) {
     this.sidebarLists = [
       {
@@ -164,10 +171,19 @@ export class MainComponent implements OnInit {
     }else{
       this.router.navigate(['login']);
     }
-
-
-
   }
+
+  start(): void {
+    console.log('开始运动');
+    if (this._isTrue) {
+      this.boxState = 'right';
+    } else {
+      this.boxState = 'left';
+    }
+    this._isTrue = !this._isTrue;
+  }
+
+
   todoShow(index) {
     this.isUlShow = index;
     this.isLiShow = 0;
