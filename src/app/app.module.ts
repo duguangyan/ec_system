@@ -22,6 +22,12 @@ import { AppOrderDetailComponent } from './pages/app-order/app-order-detail/app-
 import {AppOrderComponent} from './pages/app-order/app-order.component';
 import {HttpService} from './sevice/http.service';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { AccountCentralComponent } from './pages/account-central/account-central.component';
+import { AccountListComponent } from './pages/account-central/account-list/account-list.component';
+import { UsersListComponent } from './pages/account-central/users-list/users-list.component';
+import { FindersListComponent } from './pages/account-central/finders-list/finders-list.component';
+import {CommonService} from './sevice/common.service';
+import { AccountDetailComponent } from './pages/account-central/account-list/account-detail/account-detail.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,6 +45,11 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     AppOrderComponent,
     AppOrderListsComponent,
     AppOrderDetailComponent,
+    AccountCentralComponent,
+    AccountListComponent,
+    UsersListComponent,
+    FindersListComponent,
+    AccountDetailComponent,
   ],
   imports: [
     FormsModule,
@@ -47,7 +58,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     BrowserModule,
     RouterModule.forRoot(ROUTES)
   ],
-  providers: [HttpService],
+  providers: [HttpService,CommonService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

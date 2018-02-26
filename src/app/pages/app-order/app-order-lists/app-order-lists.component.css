@@ -30,3 +30,6 @@ button{
 .layui-elem-field{
   margin-top: 20px !important;
 }
+.layui-btn-disabled{
+  color: #C9C9C9;
+}

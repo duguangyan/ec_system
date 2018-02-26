@@ -13,14 +13,12 @@ declare var layer:any;
 })
 export class AppOrderListsComponent implements OnInit {
   public lists: any;
-  public orderListsUrl = API_ENDPOINT +'/find/demand/get?user_id='+Cookie.load('userId');
-  public ceshi:any = 'sssssssssssss';
+  public makeCollectionsVal:any = '确认收款';
   constructor(public router: Router,
               public httpService: HttpService,
               public cd: ChangeDetectorRef) { }
 
   ngOnInit() {
-    var _this = this;
     // 获取列表
     this.getOrderLists();
     layui.use('laydate', function(){
@@ -39,7 +37,7 @@ export class AppOrderListsComponent implements OnInit {
         ,layer = layui.layer;
       //完整功能
       laypage.render({
-        elem: 'demo7'
+        elem: 'appOrderListsPagination'
         ,count: 100
         ,layout: ['count', 'prev', 'page', 'next', 'limit', 'skip']
         ,jump: function(obj,first){
@@ -47,8 +45,6 @@ export class AppOrderListsComponent implements OnInit {
           if(!first){
             //do something
             layer.msg(obj.curr,{time:500});
-            this.ceshi = obj.curr;
-            _this.dd(obj.curr);
           }
         }
       });
@@ -57,9 +53,6 @@ export class AppOrderListsComponent implements OnInit {
 
   }
 
-  dd(d){
-    this.ceshi = d;
-  }
 
   // 查询
   orderSearch(){
@@ -72,7 +65,7 @@ export class AppOrderListsComponent implements OnInit {
       return false;
     }
     const params = {
-      user_id: Cookie.load('userId'),
+      //user_id: Cookie.load('userId'),
       page:1,
       pageSize:10
     }
@@ -95,4 +88,25 @@ export class AppOrderListsComponent implements OnInit {
       }
     })
   }
+  // 确认收款
+  makeCollections(event){
+    if($(event.target).html() === '已收款'){
+      return false;
+    }
+    console.log(event.target);
+    $(event.target).html('已收款').addClass('layui-btn-disabled');
+  }
+
+  distribute(){
+    //询问框
+    let html = '<div><p>请选择找料人员</p><p class="ddd">张山</p></div>';
+    layer.confirm(html, {
+      btn: ['确认','取消'] //按钮
+    }, function(){
+      layer.msg('分配成功', {icon: 1,time: 1000});
+    }, function(){
+      layer.msg('取消成',   {icon: 2,time: 1000});
+    });
+  }
+
 }

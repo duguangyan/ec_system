@@ -32,6 +32,15 @@ export class MainComponent implements OnInit {
         ]
       },
       {
+        url:'/accountList',
+        h5:'账户中心',
+        lists:[
+          {url:'/accountList',txt:'管理员列表'},
+          {url:'/usersList',txt:'用户列表'},
+          {url:'/findersList',txt:'找料员列表'},
+        ]
+      },
+      /*{
         url:'/search',
         h5:'基础资料管理',
         lists:[
@@ -108,7 +117,7 @@ export class MainComponent implements OnInit {
           {url:'',txt:'资讯公告管理'},
           {url:'',txt:'新增资讯公告'}
         ]
-      },
+      },*/
       /*
       {
         url:'/settings',
@@ -117,7 +126,7 @@ export class MainComponent implements OnInit {
           {url:'',txt:'付费订阅订单查询'}
         ]
       },*/
-      {
+      /*{
         url:'/settings',
         h5:'结算管理',
         lists:[
@@ -160,7 +169,7 @@ export class MainComponent implements OnInit {
           {url:'',txt:'用户管理'},
           {url:'',txt:'新增用户'}
         ]
-      },
+      },*/
     ];
   }
 

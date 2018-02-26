@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import {HttpService} from '../../../sevice/http.service';
+import {Cookie} from 'angular2-cookies';
 declare var $: any;
 
 @Component({
@@ -9,10 +11,19 @@ declare var $: any;
 })
 export class AppOrderDetailComponent implements OnInit {
 
-  constructor(public activatedRoute: ActivatedRoute) {
+  constructor(public activatedRoute: ActivatedRoute,
+              public httpService: HttpService) {
     activatedRoute.queryParams.subscribe(queryParams => {
       let id = queryParams.orderId;
       console.log(id);
+      const params = {
+        user_id:'',
+        id:id,
+        salesman_id:''
+      }
+      this.httpService.get('/find/demand/info',{params}).subscribe((res:any)=>{
+        console.log(res);
+      })
 
     });
   }

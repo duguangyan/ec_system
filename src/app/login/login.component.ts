@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
 import {Cookie} from 'angular2-cookies';
 import { HttpService } from '../sevice/http.service';
-
+declare var layer:any;
 declare var $: any;
 @Component({
   selector: 'app-login',
@@ -26,27 +26,31 @@ export class LoginComponent implements OnInit {
 
   login() {
     if(!(/^1[3|4|5|8][0-9]\d{4,8}$/.test(this.userName))){
-      this.toggle($('.bs-example-modal-lg'),'用户名不正确');
+      layer.msg('用户名不正确',{time:1000});
       return false;
     }
     if(this.passWord === undefined){
-      this.toggle($('.bs-example-modal-lg'),'密码不正确');
+      layer.msg('密码不正确',{time:1000});
     }
     const params = {
       user_name: this.userName,
       user_psw: this.passWord
     }
-    this.httpService.post('/auth/member/login',params).subscribe((res: any)=>{
-      if(res.code>=0) {
-        this.getUserMsg(res.data);
+    this.httpService.post('/auth/admin/login',params).subscribe((res: any)=>{
+      if(res.code) {
+        //this.getUserMsg(res.data);
+        Cookie.save('userId','1',7);
+        Cookie.save('userName','duguangyan',7);
+        this.router.navigate(['appOrderLists']);
       }else{
-        this.toggle($('.bs-example-modal-lg'),'账户或密码错误');
+        layer.msg('账户或密码错误',{time:1000});
       }
+    },(error)=>{
+      layer.msg('网络慢请稍后',{time:1000});
     })
 
   }
 
-  // 获取用户信息
   // 获取用户信息
   getUserMsg(id) {
     const params = {

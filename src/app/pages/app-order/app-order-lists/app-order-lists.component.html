@@ -10,7 +10,7 @@
       <span>物料类型:</span><input type="text" placeholder="物料查询" class="layui-input">
     </div>
     <div class="layui-col-xs3">
-      <span>描述:</span><input type="text" placeholder="描述查询" class="layui-input">
+      <span>找料人:</span><input type="text" placeholder="描述查询" class="layui-input">
     </div>
   </div>
   <div class="layui-row listsTitle2">
@@ -38,9 +38,9 @@
 
     <table class="layui-table">
       <colgroup>
-        <col width="40%" >
+        <col width="30%" >
         <col width="40%">
-        <col width="20%">
+        <col width="30%">
         <col>
       </colgroup>
       <thead>
@@ -51,15 +51,19 @@
       </tr>
       </thead>
       <tbody>
-      <tr *ngFor="let list of lists">
+      <tr *ngFor="let list of lists;let i = index">
         <td>{{list.field_desc}}</td>
         <td>{{list.field_desc}}</td>
-        <td> <button class="layui-btn" (click)="goDetail(list.id)">详情</button></td>
+        <td>
+          <button class="layui-btn" (click)="goDetail(list.id)">详情</button>
+          <button class="layui-btn layui-btn-normal" [ngClass]="{'layui-btn-disabled':false}" (click)="makeCollections($event)">{{fasle?'已收款':'确认收款'}}</button>
+          <button class="layui-btn layui-btn-warm" (click)="distribute()">分配</button>
+        </td>
       </tr>
       </tbody>
     </table>
 
-    <div id="demo7"></div>
+    <div id="appOrderListsPagination"></div>
     <div>{{ceshi}}</div>
   </div>
 
